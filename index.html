@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星空和流星效果</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            background: black;
+        }
+
+        .stars {
+            width: 2px;
+            height: 2px;
+            background: white;
+            position: absolute;
+            animation: twinkling 2s infinite alternate;
+        }
+
+        .meteor {
+            position: absolute;
+            width: 3px;
+            height: 150px;
+            background: linear-gradient(white, rgba(255, 255, 255, 0));
+            animation: shooting 2s infinite ease-in-out;
+        }
+
+        @keyframes twinkling {
+            from { opacity: 0.3; }
+            to { opacity: 1; }
+        }
+
+        @keyframes shooting {
+            0% { top: -150px; left: 50%; }
+            25% { top: 50%; left: 65%; }
+            50% { top: 150%; left: 80%; }
+            100% { top: -150px; left: 50%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" style="top: 50px; left: 20%;"></div>
+    <div class="stars" style="top: 80px; left: 40%;"></div>
+    <div class="stars" style="top: 100px; left: 60%;"></div>
+    <div class="stars" style="top: 120px; left: 80%;"></div>
+    <div class="stars" style="top: 150px; left: 30%;"></div>
+    <div class="meteor" style="top: -150px; left: 50%;"></div>
+</body>
+</html>
